@@ -12,14 +12,13 @@ function user() {
 }
 
 function passGen($minchars=8, $maxchars=10, $chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz") {
-$escapecharplus = 0;
-$repeat = mt_rand($minchars, $maxchars);
-$randomword = '';
-while ( $escapecharplus < $repeat )
-{
-$randomword .= $chars[mt_rand(1, strlen($chars)-1)];
-$escapecharplus += 1;
-}
-return $randomword;
+    $escapecharplus = 0;
+    $repeat = mt_rand($minchars, $maxchars);
+    $randomword = '';
+    while ( $escapecharplus < $repeat ) {
+        $randomword .= $chars[mt_rand(1, strlen($chars)-1)];
+        $escapecharplus += 1;
+    }
+    return $randomword;
 }
 ?>

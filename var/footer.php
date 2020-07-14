@@ -1,6 +1,6 @@
-</body>
 <script>
 $(function() {
+    /* скрипты для скрытия/отображения форм входа/регистрации и смены пароля/ФИО */
     $("form[name=reg]").hide();
     $("button.logging").click(function() {
         if ( !$(this).hasClass("active") ) {
@@ -24,4 +24,5 @@ $(function() {
     ?>
 });
 </script>
+</body>
 </html>

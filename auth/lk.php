@@ -11,7 +11,6 @@
       $color = 'green';
       $msgNew = 'Пароль успешно изменён!';
       $user = user();
-      //exit( header("Location: /") );
     } else $msgNew = 'Что-то пошло не так, попробуйте ещё раз...';
   }
   if ( isset($_POST['c_name']) ) {
@@ -21,7 +20,6 @@
       $color = 'green';
       $msgNew = 'ФИО успешно изменены!';
       $user = user();
-      //exit( header("Location: /") );
     } else $msgNew = 'Что-то пошло не так, попробуйте ещё раз...';
   }
 ?>
@@ -40,11 +38,11 @@
     </form>
     <form name="changeFIO" action="" method="POST" autocomplete="off"
       style="display:flex; flex-direction:column; width:300px; align-items:center;">
-      <label for="n_name" style="margin-top:15px;">Введите ФИО: <input name="n_name" type="text" required></label>
+      <label for="n_name" style="margin-top:15px;">Введите ФИО: <input name="n_name" type="text" placeholder="<?=$user['_name']?>" required></label>
       <input name="c_name" type="submit" style="width:115px; margin-top:15px; font-size:16px; background: aliceblue;" value="Отправить">
     </form>
   </div>
-  <form name="logout" action="/auth/logout.php" method="POST" style="margin-top:10px;">
+  <form name="logout" action="/auth/signout.php" method="POST" style="margin-top:10px;">
     <input name="logout" type="submit" value="Выход">
   </form>
 	<p style="color:<?=$color?>;"><?=$msgNew?></p>
