@@ -1,13 +1,15 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/config.php' ;
-include_once ROOT.'/functions.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/src/config.php' ;
+include_once ROOT.'/src/functions.php';
+
+// получим данные юзера (если он логинился)
+$user = user();
 
 ob_start();
-error_reporting(E_ALL);
 
-include_once ROOT.'/var/header.php';
-include_once ROOT.'/var/page.php';
-include_once ROOT.'/var/footer.php';
+include ROOT.'/var/header.php';
+include ROOT.'/var/page.php';
+include ROOT.'/var/footer.php';
 
 $content = ob_get_contents();
 ob_end_clean();
