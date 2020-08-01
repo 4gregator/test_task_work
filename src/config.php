@@ -18,5 +18,5 @@
     $pdo->exec('SET NAMES utf8;'); 
     $pdo->exec('SET sql_mode="";');
      
-    define('ROOT', dirname(__FILE__));
+    define('ROOT', dirname(__DIR__));
 ?>
