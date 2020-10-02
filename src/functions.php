@@ -44,6 +44,7 @@ function user_login($login) {
 
 // добавление нового юзера
 function user_new($arr) {
+    global $pdo;
     // $arr массив данных: логин, пароль, почта, фио
     $sess_id = md5(rand(1000,9999).generator(12,18));
 
@@ -67,6 +68,7 @@ function user_session($id) {
 // изменение данных юзера
 // 'pass' = изменение пароля, 'name' = изменение ФИО
 function user_change($new_data, $id, $type) {
+    global $pdo;
     if ($type == 'pass') $string = '_pas';
     if ($type == 'name') $string = '_name';
     $query = "UPDATE users SET " + $string + " = ? WHERE `_id` = ? LIMIT 1";
