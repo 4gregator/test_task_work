@@ -60,7 +60,7 @@ function user_session($id) {
     $sess_id = md5(rand(1000,9999).generator(12,18));
 
     $q = $pdo->prepare("UPDATE users SET `_session_id` = ? WHERE `_id` = ? LIMIT 1");
-    $q->execute(array($sess_id,$id]));
+    $q->execute(array($sess_id,$id));
 
     setcookie("sess_id", $sess_id, time()+60*60*24, "/");
 }
